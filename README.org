@@ -1,0 +1,6 @@
+#+STARTUP: showall
+[[https://travis-ci.org/yurrriq/erlang-totp][file:https://travis-ci.org/yurrriq/erlang-totp.svg?branch=master]]
+
+* TOTP
+Erlang adaptation of Time-Based One-Time Password Algorithm,
+as described in [[https://tools.ietf.org/html/rfc6238][RFC 6238]].

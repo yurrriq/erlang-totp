@@ -1,31 +1,13 @@
-.PHONY: \
-	all \
-	compile \
-	clean \
-	deps \
-	dialyze \
-	test
+.PHONY: all, compile, clean, dialyze, test
 
 all: travis_ci dialyze
 
-travis_ci: clean deps compile test
+travis_ci: clean test
 
-deps: deps_get deps_update
+compile: ; @rebar3 compile
 
-deps_get:
-	@rebar get-deps
+clean: ; @rebar3 clean
 
-deps_update:
-	@rebar update-deps
+dialyze:; ; @rebar3 dialyzer
 
-compile:
-	@rebar compile
-
-clean:
-	@rebar clean
-
-dialyze:
-	@dialyzer deps/*/ebin/*.beam ebin/*.beam test/*.beam
-
-test:
-	@rebar ct skip_deps=true
+test: ; @rebar3 ct
